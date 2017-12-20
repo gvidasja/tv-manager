@@ -1,0 +1,53 @@
+.file-renamer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.file-renamer .top {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.file-renamer .toolbar {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    z-index: 1
+}
+
+.file-renamer .toolbar span {
+    flex-grow: 1;
+}
+
+.file-renamer .lists {
+    display: flex;
+    flex-basis: 0;
+    width: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
+.file-renamer .lists>div {
+    flex-grow: 1;
+    /* width: 0; */
+}
+
+.info.visible {
+    transition: bottom 0.1s cubic-bezier(0.9, 0.1, 0.1, 0.9), opacity 0.1s cubic-bezier(0.9, 0.1, 0.1, 0.9);    
+    bottom: 48px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.info {
+    transition: bottom 0.1s cubic-bezier(0.9, 0.1, 0.1, 0.9), opacity 0.1s cubic-bezier(0.9, 0.1, 0.1, 0.9), visibility 0.1s 0.1s linear;    
+    position: absolute;
+    bottom: 0;
+    right: 48px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    padding: 12px;
+    background: #4a8;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+}

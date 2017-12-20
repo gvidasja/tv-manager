@@ -1,0 +1,33 @@
+.show-search {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.search {
+    padding: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.results {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 12px;
+    background: #ddd;
+}
+
+.results>.result {
+    border: 2px solid white;
+    cursor: pointer;
+    transition: border-color 0.1s linear;
+}
+
+.results>.result:hover {
+    border: 2px solid #866;
+    box-sizing: content-box;
+}
+
+.results>.result:not(:last-child) {
+    margin-bottom: 6px;
+}

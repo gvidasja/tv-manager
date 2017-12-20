@@ -1,0 +1,35 @@
+.tv-show-card {
+    background: white;
+    padding: 6px;
+    display: flex;
+    height: 150px;
+}
+
+.tv-show-card img {
+    height: 100%;
+    min-width: 100px;
+    object-fit: cover;
+}
+
+.tv-show-card .details {
+    padding: 6px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tv-show-card .details .overview {
+    font-size: 13px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.tv-show-card .details .overview:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent, white);
+}
