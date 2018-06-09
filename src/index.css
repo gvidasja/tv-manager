@@ -36,3 +36,23 @@ input:hover {
 input:focus {
   border-color: #bbb;
 }
+
+
+button {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px;
+  border: 0;
+  color: white;
+  border-radius: 2px;
+  background: #5a7;
+  transition: background 0.1s linear;
+}
+
+button:hover {
+  background: #6b8;
+}
+
+button:focus {
+  background: #7c9;
+}

@@ -11,13 +11,19 @@
 }
 
 .results {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
     flex-grow: 1;
     overflow-y: scroll;
     padding: 12px;
     background: #ddd;
+    box-sizing: content-box;
 }
 
 .results>.result {
+    height: 360px;
+    width: 270px;
     border: 2px solid white;
     cursor: pointer;
     transition: border-color 0.1s linear;
@@ -30,4 +36,5 @@
 
 .results>.result:not(:last-child) {
     margin-bottom: 6px;
+    margin-right: 6px;
 }

@@ -1,5 +1,7 @@
 # TV Manager
 
+A desktop app to quickly rename your tv collection.
+
 Made with electron and React
 
 # Usage

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TvService from '../services/TvService'
-import { TvShowCard } from './TvShowCard'
+import { SimpleTvShowCard } from './TvShowCard'
 import './ShowSearch.css'
 
 const ShowSearchView = ({ onSearch, onShowSelect, results, ...props }) => (
@@ -14,8 +14,8 @@ const ShowSearchView = ({ onSearch, onShowSelect, results, ...props }) => (
         </div>
         <div className="results">
         {results.map(r => 
-            <div className="result"key={r.id}>
-                <TvShowCard
+            <div className="result" key={r.id}>
+                <SimpleTvShowCard
                     name={r.name}
                     posterPath={r.posterPath}
                     overview={r.overview}

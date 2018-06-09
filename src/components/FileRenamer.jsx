@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TvService from '../services/TvService'
 import FileService from '../services/FileService'
 import { FileList } from './FileList'
-import { TvShowCard } from './TvShowCard'
+import { DetailedTvShowCard } from './TvShowCard'
 import { swap, zip } from '../util/array'
 import { pad } from '../util/number'
 import { EpisodeList } from './EpisodeList'
@@ -18,20 +18,23 @@ const listAreEmptyOrDontMatch = (files, seasons) =>
     || !seasons
     || files.length !== episodesInSeasons(seasons)
 
-const FileRenamerView = ({ renameCompleted, reloadShow, show, rename, onFileChange, files, seasons, moveFileUp, moveFileDown, removeSeason, removeEpisode, ...props }) => (
+const FileRenamerView = ({ deselectShow, renameCompleted, reloadShow, show, rename, onFileChange, files, seasons, moveFileUp, moveFileDown, removeSeason, removeEpisode, ...props }) => (
     <div className="file-renamer" {...props}>
         { show && 
         <div className="top">
-            <TvShowCard {...show}/>
+            <DetailedTvShowCard {...show}/>
             <div className="toolbar">
-                <span>Select episodes and matching files</span>
-                    <button
-                        onClick={reloadShow}
-                    >Reload episodes</button>
-                    <button 
-                        disabled={listAreEmptyOrDontMatch(files, seasons)}
-                        onClick={rename}
-                    >Rename</button>
+                <span>
+                    <button onClick={deselectShow}>Back</button>
+                    Select episodes and matching files
+                </span>
+                <button
+                    onClick={reloadShow}
+                >Reload episodes</button>
+                <button 
+                    disabled={listAreEmptyOrDontMatch(files, seasons)}
+                    onClick={rename}
+                >Rename</button>
             </div>
         </div>}
         { show && (

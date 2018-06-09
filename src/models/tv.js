@@ -5,7 +5,7 @@ export const toShowModel = host => s => ({
     name: s.name,
     posterPath: makeUrl(host, `/t/p/original${s.poster_path}`),
     overview: s.overview,
-    numberOfSeasons: s.seasons.length
+    numberOfSeasons: s.seasons ? s.seasons.length : 0
 })
 
 export const toEpisodeModel = e => ({

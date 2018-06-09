@@ -9,7 +9,7 @@ const image_host = 'image.tmdb.org'
 const makeApiRequest = (path, query) => fetch(makeUrl(api_host, path, { ...query, api_key })).then(r => r.json())
 
 const searchTvShows = query => makeApiRequest('/3/search/tv', { query })
-    .then(r => r.results.map(toShowModel))
+    .then(r => r.results.map(toShowModel(image_host)))
 
 const getTvShow = showId => makeApiRequest(`/3/tv/${showId}`)
     .then(toShowModel(image_host))

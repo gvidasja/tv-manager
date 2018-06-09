@@ -3,10 +3,10 @@ import { FileRenamer } from './FileRenamer'
 import { ShowSearch } from './ShowSearch'
 import './TvManager.css'
 
-const TvManagerView = ({ showId, onShowSelect, ...props }) => (
+const TvManagerView = ({ showId, onShowSelect, deselectShow, ...props }) => (
     <div className="tv-manager" {...props}>
     {showId 
-        ? <FileRenamer showId={showId} />
+        ? <FileRenamer showId={showId} deselectShow={deselectShow}/>
         : <ShowSearch onShowSelect={onShowSelect}/>
     }
     </div>
@@ -32,8 +32,9 @@ export class TvManager extends Component {
 
         return (
             <TvManagerView 
-                showId={showId || 62560} 
-                onShowSelect={this.onShowSelect} 
+                showId={showId} 
+                onShowSelect={this.onShowSelect}
+                deselectShow={() => this.onShowSelect('')}
                 {...this.props}
             />
         )
